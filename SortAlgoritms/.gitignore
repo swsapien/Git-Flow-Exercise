@@ -1,0 +1,34 @@
+# Archivos generados por Visual Studio
+.vscode/
+.vs/
+bin/
+obj/
+*.suo
+*.user
+*.sln.docstates
+
+# Carpeta de pruebas unitarias generada por NUnit
+TestResult/
+
+# Carpeta de paquetes NuGet
+packages/
+
+# Carpeta de dependencias generada por .NET Core
+project.lock.json
+project.fragment.lock.json
+
+# Logs y archivos temporales
+[Tt]humbs.db
+*.log
+*.logs
+*.cache
+*.swp
+*.mdf
+*.ldf
+*.tmp
+*.db
+*.sqlite
+*.pfx
+
+# Carpeta de resultados de pruebas generada por NUnit
+[Tt]est[Rr]esult*/
