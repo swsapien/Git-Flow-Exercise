@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-
+﻿
 namespace SortAlgoritms.Algoritms
 {
     /// <summary>
@@ -29,7 +27,24 @@ namespace SortAlgoritms.Algoritms
             return values;
         }
 
-        private void CountingSort(int[] values, int exp)
+        public int[] GetDisorder(int numberValues)
+        {
+            Random random = new Random();
+            return Enumerable.Range(1, numberValues).Select(x => random.Next(1, 100)).ToArray();
+        }
+
+        public bool Validation(int[] values)
+        {
+            for (int i = 0; i < values.Length - 1; i++)
+            {
+                if (values[i] > values[i + 1])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private static void CountingSort(int[] values, int exp)
         {
             int n = values.Length;
             int[] output = new int[n];
