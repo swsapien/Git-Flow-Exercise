@@ -17,14 +17,14 @@ namespace SortAlgoritms.Algoritms
     {
         public int[] GetDisorder(int numberValues)
         {
-            int minValue = 1;    // Change this to the minimum value you want in the array
-            int maxValue = 100;  // Change this to the maximum value you want in the array
+                        Random rand = new Random();
+            int[] randomArray = new int[length];
 
-            Random rand = new Random();
-            int[] randomArray = new int[numberValues];
-
-            for (int i = 0; i < numberValues; i++)
+            for (int i = 0; i < length; i++)
+            {
                 randomArray[i] = rand.Next(minValue, maxValue + 1);
+            }
+
             return randomArray;
         }
 
@@ -63,14 +63,7 @@ namespace SortAlgoritms.Algoritms
 
         public bool Validation(int[] values)
         {
-            if (values.Length <= 1)
-                // An array with 0 or 1 elements is always considered sorted.
-                return true;
-
-            for (int i = 1; i < values.Length; i++)
-                if (values[i] < values[i - 1])
-                    return false;
-            return true;
+            throw new NotImplementedException();
         }
     }
 }

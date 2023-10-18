@@ -63,14 +63,19 @@ namespace SortAlgoritms.Algoritms
 
         public bool Validation(int[] values)
         {
-            if (values.Length <= 1)
-                // An array with 0 or 1 elements is always considered sorted.
-                return true;
-
-            for (int i = 1; i < values.Length; i++)
-                if (values[i] < values[i - 1])
-                    return false;
+        if (arr.Length <= 1)
+        {
+            // An array with 0 or 1 elements is always considered sorted.
             return true;
+        }
+
+        for (int i = 1; i < arr.Length; i++)
+            if (arr[i] < arr[i - 1])
+            {
+                return false;
+            }
+        }
+        return true;
         }
     }
 }
