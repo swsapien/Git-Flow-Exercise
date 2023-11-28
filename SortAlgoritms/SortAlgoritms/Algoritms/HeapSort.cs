@@ -10,8 +10,8 @@ namespace SortAlgoritms.Algoritms
     {
         public int[] GetDisorder(int numberValues)
         {
-            Random rng = new Random();
-            return Enumerable.Range(1, numberValues).OrderBy(x => rng.Next()).ToArray();
+            Random random = new Random();
+            return Enumerable.Range(1, numberValues).Select(_ => random.Next(-100, 101)).ToArray();
         }
 
         public int[] Sort(int[] values)
