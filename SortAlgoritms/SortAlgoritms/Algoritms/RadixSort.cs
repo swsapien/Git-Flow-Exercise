@@ -29,8 +29,8 @@ namespace SortAlgoritms.Algoritms
 
         public int[] GetDisorder(int numberValues)
         {
-            Random random = new Random();
-            return Enumerable.Range(1, numberValues).Select(x => random.Next(1, 100)).ToArray();
+            Random random = new();
+            return Enumerable.Range(1, numberValues).Select(x => random.Next(-100, 100)).ToArray();
         }
 
         public bool Validation(int[] values)
