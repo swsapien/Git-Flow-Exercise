@@ -16,7 +16,7 @@ public class BubbleSort : IAlgoritm
         int[] values = new int[numberValues];
         for (int i = 0; i < numberValues; i++)
         {
-            values[i] = random.Next(1, 100); // Random values between 1 and 100
+            values[i] = random.Next(-100, 100); // Random values between -100 and 100
         }
         return values;
     }
