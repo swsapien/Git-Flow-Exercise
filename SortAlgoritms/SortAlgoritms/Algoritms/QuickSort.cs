@@ -11,36 +11,47 @@ namespace SortAlgoritms.Algoritms
     {
         public int[] GetDisorder(int numberValues)
         {
-            // Implementa el método para generar un arreglo desordenado si es necesario.
-            throw new NotImplementedException();
+            Random random = new Random();
+            int[] values = new int[numberValues];
+
+            for (int i = 0; i < numberValues; i++)
+            {
+                values[i] = random.Next(-100, 101); // Genera números aleatorios entre -100 y 100.
+            }
+
+            return values;
         }
 
         public int[] Sort(int[] values)
         {
-            if (values == null)
+            if (values == null || values.Length <= 1)
             {
-                throw new ArgumentNullException(nameof(values));
+                return values;
             }
 
-            // Llama al método QuickSort para ordenar el arreglo.
-            QuickSortArray(values, 0, values.Length - 1);
-
+            QuickSortAlgorithm(values, 0, values.Length - 1);
             return values;
         }
 
         public bool Validation(int[] values)
         {
-            // Implementa el método para validar el arreglo ordenado si es necesario.
-            throw new NotImplementedException();
+            for (int i = 1; i < values.Length; i++)
+            {
+                if (values[i] < values[i - 1])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
-        private void QuickSortArray(int[] arr, int low, int high)
+        private void QuickSortAlgorithm(int[] arr, int low, int high)
         {
             if (low < high)
             {
-                int pivotIndex = Partition(arr, low, high);
-                QuickSortArray(arr, low, pivotIndex - 1);
-                QuickSortArray(arr, pivotIndex + 1, high);
+                int partitionIndex = Partition(arr, low, high);
+                QuickSortAlgorithm(arr, low, partitionIndex - 1);
+                QuickSortAlgorithm(arr, partitionIndex + 1, high);
             }
         }
 
@@ -51,20 +62,22 @@ namespace SortAlgoritms.Algoritms
 
             for (int j = low; j < high; j++)
             {
-                if (arr[j] <= pivot)
+                if (arr[j] < pivot)
                 {
                     i++;
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+                    Swap(arr, i, j);
                 }
             }
 
-            int temp2 = arr[i + 1];
-            arr[i + 1] = arr[high];
-            arr[high] = temp2;
-
+            Swap(arr, i + 1, high);
             return i + 1;
+        }
+
+        private void Swap(int[] arr, int i, int j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
 }
