@@ -21,7 +21,7 @@ namespace SortAlgoritms.Algoritms
             int[] values = new int[numberValues];
             for (int i = 0; i < numberValues; i++)
             {
-                values[i] = random.Next(numberValues); // Valores aleatorios dentro del rango
+                values[i] = random.Next(-100,100); // Valores aleatorios dentro del rango
             }
             return values;
         }
