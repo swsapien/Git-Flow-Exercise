@@ -17,7 +17,7 @@ namespace SortAlgoritms.Algoritms
     {
         public int[] GetDisorder(int numberValues)
         {
-            int minValue = 1;    // Change this to the minimum value you want in the array
+            int minValue = -1;    // Change this to the minimum value you want in the array
             int maxValue = 100;  // Change this to the maximum value you want in the array
 
             Random rand = new Random();
